@@ -7,12 +7,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-        tr{
-            color: #18bc9c;
-            border: 1px solid black;
-        }
-    </style>
     <title>{% block title %}{% endblock %} - Flask Skeleton</title>
 
     {{ emit_css("css_all") }}
@@ -22,7 +16,6 @@
     {% endblock %}
 
   </head>
-
   <body>
     {% include "shared/_navbar.tmpl" %}
     <div class="container">

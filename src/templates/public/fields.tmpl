@@ -1,0 +1,17 @@
+{% from "macros/fields.tmpl" import render_input_field,render_checkbox_field, render_submit %}
+{% extends "shared/layout.tmpl" %}
+
+{% block title %}Forgotten password{% endblock %}
+
+{% macro render_input_choice(field) %}
+{% with value = field.data if field.data is not none else "" %}
+    <div class="form-group">
+        {% if field.label is not none and field.type != "hidden" %}
+            <label class="{{ field.lc if field.lc else '' }} control-label" for="{{ field.name }}">{{ field.label }}</label>
+        {% endif %}
+        <div class="{{ field.rc if field.rc else '' }}">
+          {{ field }}
+        </div>
+    </div>
+  {% endwith %}
+{% endmacro %}
